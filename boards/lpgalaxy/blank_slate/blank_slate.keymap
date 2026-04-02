@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-
 #define CLMK_L 0
 #define QWTY_L 1
 #define LOWR_L 2
@@ -37,13 +36,13 @@
 		/*   tap_dances { */
 		/*   	shifty: shift_caps_word { */
 		/* 	compatible = "zmk,behavior-tap-dance"; */
-		/* 	label = "TD_SHIFTY"; */
+		/* 	display-name = "TD_SHIFTY"; */
 		/* 	#binding-cells = <0>; */
 		/* 	tapping-term-ms = <150>; */
 		/* 	bindings = <&kp LSHFT>, <&caps_word>; */
 		/* }; */
 		/*   }; */
-
+			
 
     cond_layers {
         compatible = "zmk,conditional-layers";
@@ -57,17 +56,17 @@
         compatible = "zmk,keymap";
 
         colemak_layer {
-            label = "Colemak";
+            display-name = "Colemak";
             bindings = <
-                &kp ESC    &kp Q      &kp W      &kp F       &kp P       &kp G       &kp J       &kp L       &kp U        &kp Y        &kp SEMI     &kp FSLH
-                &kp TAB    &kp A      &kp R      &kp S       &kp T       &kp D       &kp H       &kp N       &kp E        &kp I        &kp O        &kp BSPC
+                &kp TAB	   &kp Q      &kp W      &kp F       &kp P       &kp G       &kp J       &kp L       &kp U        &kp Y        &kp SEMI     &kp ESC
+                &kp LCTRL  &kp A      &kp R      &kp S       &kp T       &kp D       &kp H       &kp N       &kp E        &kp I        &kp O        &kp BSPC
                 &kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B       &kp K       &kp M       &kp DOT      &kp COMMA    &kp SQT      &kp RET
                 &kp LCTRL  &kp PG_UP  &kp LALT   &kp LGUI    &mo LOWR_L        &kp SPACE         &mo UPPR_L  &kp RSHFT    &kp RCTRL    &kp RALT     &kp CAPS
             >;
         };
 
         qwerty_layer {
-            label = "Qwerty";
+            display-name = "Qwerty";
             bindings = <
                 &trans     &kp Q      &kp W      &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I        &kp O        &kp P        &trans
                 &trans     &kp A      &kp S      &kp D       &kp F       &kp G       &kp H       &kp J       &kp K        &kp L        &kp SEMI     &trans
@@ -77,27 +76,27 @@
         };
 
         lower_layer {
-            label = "Lower";
+            display-name = "Lower";
             bindings = <
-                &kp TILDE  &trans         &trans         &trans       &trans       &trans       &trans           &kp N7       &kp N8       &kp N9       &trans        &trans
-                &trans     &kp LS(MINUS)  &kp GRAVE      &kp LS(LBKT) &kp LS(RBKT) &trans       &kp LS(EQUAL)    &kp N4       &kp N5       &kp N6       &kp MINUS     &trans
+                &trans	   &trans         &trans         &trans       &trans       &trans       &trans           &kp N7       &kp N8       &kp N9       &trans        &trans
+                &trans     &kp BSLH		  &kp FSLH       &kp LS(LBKT) &kp LS(RBKT) &trans       &kp LS(EQUAL)    &kp N4       &kp N5       &kp N6       &kp MINUS     &trans
                 &trans     &trans         &trans		 &trans		  &trans	   &trans       &kp EQUAL        &kp N1       &kp N2       &kp N3       &trans        &trans
                 &trans     &trans         &trans         &trans       &trans       &trans       &trans           &kp N0       &trans       &trans       &trans        &trans
             >;
         };
 
         raise_layer {
-            label = "Raise";
+            display-name = "Raise";
             bindings = <
-                &kp F1     &kp F2     &kp F3     &kp F4           &kp F5           &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-                &trans     &trans	  &trans	 &kp LPAR         &kp RPAR         &trans       &kp INS      &kp LEFT     &kp UP       &kp RIGHT    &kp DOWN     &kp DEL
-                &trans     &trans     &trans     &kp PIPE		  &kp BSLH         &trans       &trans       &kp PG_UP    &kp PG_DN    &kp HOME     &kp END      &trans
-                &trans     &trans     &trans     &trans           &trans           &trans       &trans       &trans       &trans       &trans       &trans       &trans
+                &kp F1     &kp F2			&kp F3     &kp F4           &kp F5           &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
+                &trans     &kp LS(MINUS)	&kp GRAVE  &kp LPAR         &kp RPAR         &trans       &kp INS      &kp LEFT     &kp UP       &kp RIGHT    &kp DOWN     &kp DEL
+                &trans     &trans			&trans     &kp PIPE		    &kp BSLH         &trans       &trans       &kp PG_UP    &kp PG_DN    &kp HOME     &kp END      &trans
+                &trans     &trans			&trans     &trans           &trans           &trans       &trans       &trans       &trans       &trans       &trans       &trans
             >;
         };
 	
         adjust_layer {
-            label = "Adjust";
+            display-name = "Adjust";
             bindings = <
                 &sys_reset	&bootloader		&studio_unlock	&out OUT_TOG     &trans           &trans           &trans           &to CLMK_L       &to QWTY_L       &trans           &trans           &trans
                 &trans		&trans			&trans			&kp LBKT         &kp RBKT		  &trans           &trans           &trans           &trans	          &trans           &trans           &trans
