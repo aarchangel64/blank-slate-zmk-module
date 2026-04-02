@@ -43,6 +43,20 @@
 		/* }; */
 		/*   }; */
 			
+	behaviors {
+        morph_dot: morph_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp LESS_THAN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+        morph_comma: morph_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp GREATER_THAN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+    };
 
     cond_layers {
         compatible = "zmk,conditional-layers";
@@ -58,10 +72,10 @@
         colemak_layer {
             display-name = "Colemak";
             bindings = <
-                &kp TAB	   &kp Q      &kp W      &kp F       &kp P       &kp G       &kp J       &kp L       &kp U        &kp Y        &kp SEMI     &kp ESC
-                &kp LCTRL  &kp A      &kp R      &kp S       &kp T       &kp D       &kp H       &kp N       &kp E        &kp I        &kp O        &kp BSPC
-                &kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B       &kp K       &kp M       &kp DOT      &kp COMMA    &kp SQT      &kp RET
-                &kp LCTRL  &kp PG_UP  &kp LALT   &kp LGUI    &mo LOWR_L        &kp SPACE         &mo UPPR_L  &kp RSHFT    &kp RCTRL    &kp RALT     &kp CAPS
+                &kp TAB		&kp Q      &kp W      &kp F       &kp P       &kp G       &kp J       &kp L       &kp U        &kp Y        &kp SEMI     &kp ESC
+                &kp LCTRL	&kp A      &kp R      &kp S       &kp T       &kp D       &kp H       &kp N       &kp E        &kp I        &kp O        &kp BSPC
+                &kp LSHFT	&kp Z      &kp X      &kp C       &kp V       &kp B       &kp K       &kp M       &morph_dot   &morph_comma	&kp SQT      &kp RET
+                &none		&kp PG_UP  &kp LALT   &kp LGUI    &mo LOWR_L        &kp SPACE         &mo UPPR_L  &kp RSHFT    &kp RCTRL    &kp RALT     &kp CAPS
             >;
         };
 
