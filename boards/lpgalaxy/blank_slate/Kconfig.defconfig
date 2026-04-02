@@ -25,4 +25,7 @@ config ZMK_BLE
 config ZMK_USB
 	default y
 
+config ZMK_STUDIO
+	default n
+
 endif # BOARD_BLANK_SLATE
